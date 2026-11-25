@@ -1,0 +1,26 @@
+<Project>
+  <!--
+    Shared build settings for every project in the solution.
+    Project files keep only what is specific to them (TFM, output type, references).
+  -->
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Analyzers: .NET recommended rule set, code-style rules enforced at build time. -->
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+    <!-- Supply chain: reproducible restores and vulnerability audit of all (incl. transitive) packages. -->
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <NuGetAudit>true</NuGetAudit>
+    <NuGetAuditMode>all</NuGetAuditMode>
+    <NuGetAuditLevel>low</NuGetAuditLevel>
+
+    <Deterministic>true</Deterministic>
+    <Company>PC Sentinel</Company>
+    <Product>PC Sentinel</Product>
+  </PropertyGroup>
+</Project>

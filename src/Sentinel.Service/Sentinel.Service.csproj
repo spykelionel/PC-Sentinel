@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Sentinel.Service-1856eca5-a90f-4ad6-be54-eeea31524202</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" />
+    <PackageReference Include="System.Management" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sentinel.Core\Sentinel.Core.csproj" />
+    <ProjectReference Include="..\Sentinel.Infrastructure\Sentinel.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

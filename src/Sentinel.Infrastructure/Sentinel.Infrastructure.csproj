@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Windows-only: hosts WMI, SetupAPI/CfgMgr32, DPAPI and filter-port integrations. -->
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <!-- Required by source-generated P/Invoke ([LibraryImport]) with pointer parameters. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Sentinel.Infrastructure.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="System.Management" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Schema migrations, applied in order by DatabaseMigrator. Never edit a released script; add a new one. -->
+    <EmbeddedResource Include="Persistence\Migrations\*.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sentinel.Core\Sentinel.Core.csproj" />
+  </ItemGroup>
+
+</Project>
